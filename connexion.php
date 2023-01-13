@@ -56,12 +56,32 @@
 </html>
 
 <?php
-$email = "amaanali@outlook.fr";
-$mdp = "azerty";
-if (isset($_POST)) {
-    if ($_POST['email']== $email && $_POST['mdp']==$mdp ){
+if (isset($_POST['email']) && isset($_POST['mdp'])) {
+    $login = $_POST['email'];
+    $mdp = $_POST['mdp'];
+
+    try {
+        $bdd = new PDO('mysql:host=localhost;dbname=agnhen_projgit;charset=utf8', 'root', '');
+    } catch (Exception $e) {
+        die('Erreur : ' . $e->getMessage());
+    }
+
+    $req = $bdd->prepare("SELECT * FROM utilisateur where email = :email AND mdp = :mdp");
+    $req->execute(array('email' => $login, 'mdp' => $mdp));
+    $res = $req->fetch();
+
+    if ($res == true) {
+        session_start();
+        $_SESSION['email'] = $login;
+        $_SESSION['mdp'] = $mdp;
         header("Location: index.php");
     }
-}else header("Location: connexion.php");
 
+}
+if($res == false) {
+    header("Location: connexion.php");
+}
+
+echo "erreur"
+?>
 
