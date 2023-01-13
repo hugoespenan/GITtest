@@ -28,14 +28,14 @@
 
                     <div class="signin-form">
                         <h2 class="form-title">Se connecter</h2>
-                        <form method="POST" class="register-form" id="login-form">
+                        <form method="POST" class="register-form" id="login-form" action="connexion.php">
                             <div class="form-group">
                                 <label for="your_email"><i class="zmdi zmdi-account material-icons-name"></i></label>
-                                <input type="email" name="your_email" id="your_email" placeholder="Votre email"/>
+                                <input type="email" name="email" id="your_email" placeholder="Votre email"/>
                             </div>
                             <div class="form-group">
                                 <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
-                                <input type="password" name="your_pass" id="your_pass" placeholder="Votre mot de passe"/>
+                                <input type="password" name="mdp" id="your_pass" placeholder="Votre mot de passe"/>
                             </div>
                             <div class="form-group form-button">
                                 <input type="submit" name="signin" id="signin" class="form-submit" value="Se connecter.."/>
@@ -52,5 +52,20 @@
     <!-- JS -->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/js/main.js"></script>
-</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</body>
 </html>
+
+<?php
+$email = "amaanali@outlook.fr";
+$mdp = "azerty";
+if (isset($_POST)) {
+    if ($_POST['email']== $email && $_POST['mdp']==$mdp ){
+        header("Location: index.php");
+    }
+}else
+    var_dump($email);
+var_dump($mdp);
+var_dump($_POST['email']);
+var_dump($_POST['mdp']);
+
+
