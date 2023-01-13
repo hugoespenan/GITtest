@@ -23,7 +23,7 @@
                 <div class="signin-content">
                     <div class="signin-image">
                         <figure><img src="assets/images/signin-image.jpg" alt="sing up image"></figure>
-                        <a href="#" class="signup-image-link">Create an account</a>
+                        <a href="inscription.html" class="signup-image-link">Create an account</a>
                     </div>
 
                     <div class="signin-form">
@@ -62,10 +62,6 @@ if (isset($_POST)) {
     if ($_POST['email']== $email && $_POST['mdp']==$mdp ){
         header("Location: index.php");
     }
-}else
-    var_dump($email);
-var_dump($mdp);
-var_dump($_POST['email']);
-var_dump($_POST['mdp']);
+}else header("Location: connexion.php");
 
 
