@@ -1,3 +1,5 @@
+<?php session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +23,7 @@
             <div class="container">
                 <div class="signup-content">
                     <div class="signup-form">
-                        <h2 class="form-title">Bravo ! Vous voila connecté !</h2>
+                        <h2 class="form-title">Bravo ! Vous voila connecté !    <?php echo $_SESSION['nom'] . $_SESSION['prenom'] . $_SESSION['birth'] . $_SESSION['email'] ?></h2>
                         
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account "></i></label>
