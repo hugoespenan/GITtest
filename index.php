@@ -23,7 +23,7 @@
             <div class="container">
                 <div class="signup-content">
                     <div class="signup-form">
-                        <h2 class="form-title">Bravo ! Vous voila connecté !    <?php echo "Votre nom : " . $_SESSION['nom'] ." Votre prenom : " . $_SESSION['prenom'] ." Votre date d'anniversaire :  " . $_SESSION['birth'] ." Votre email : " . $_SESSION['email'] ?></h2>
+                        <h2 class="form-title">Bravo ! Vous voila connecté !</h2>
                         
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account "></i></label>
